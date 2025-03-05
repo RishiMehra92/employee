@@ -58,11 +58,10 @@ class EmployeeListScreen extends StatelessWidget {
     );
   }
 
-  /// Pie Chart - Employees by Department
-  Widget _buildDepartmentChart() {
+   Widget _buildDepartmentChart() {
     return Obx(() {
       var data = controller.getDepartmentWiseCount();
-      if (data.isEmpty) return SizedBox(); // Hide chart if no data
+      if (data.isEmpty) return SizedBox();
 
       return Container(
         height: 200,
@@ -95,8 +94,7 @@ class EmployeeListScreen extends StatelessWidget {
     });
   }
 
-  /// Bar Chart - Employees by Location
-  Widget _buildLocationChart() {
+   Widget _buildLocationChart() {
     return Obx(() {
       var data = controller.getLocationWiseCount();
       if (data.isEmpty) return SizedBox(); // Hide chart if no data
@@ -142,8 +140,7 @@ class EmployeeListScreen extends StatelessWidget {
     });
   }
 
-  /// Generates random colors for the pie chart
-  Color _getRandomColor() {
+   Color _getRandomColor() {
     return Colors.primaries[DateTime.now().millisecondsSinceEpoch % Colors.primaries.length];
   }
 }

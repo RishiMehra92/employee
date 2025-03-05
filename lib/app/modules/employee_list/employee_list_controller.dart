@@ -39,8 +39,7 @@ class EmployeeListController extends GetxController {
     loadEmployees(); // Ensure list refreshes after deletion
   }
 
-  /// Get department-wise employee count
-  Map<String, int> getDepartmentWiseCount() {
+   Map<String, int> getDepartmentWiseCount() {
     var departmentCounts = <String, int>{};
     for (var employee in employees) {
       departmentCounts[employee.department] = (departmentCounts[employee.department] ?? 0) + 1;
@@ -48,8 +47,7 @@ class EmployeeListController extends GetxController {
     return departmentCounts;
   }
 
-  /// Get location-wise employee count
-  Map<String, int> getLocationWiseCount() {
+   Map<String, int> getLocationWiseCount() {
     var locationCounts = <String, int>{};
     for (var employee in employees) {
       locationCounts[employee.location] = (locationCounts[employee.location] ?? 0) + 1;
